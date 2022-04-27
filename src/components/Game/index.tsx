@@ -1,6 +1,5 @@
-import React, { Fragment } from 'react';
 import { IGame } from '../../interfaces/Game';
-import { Text } from './styles';
+import { Container, Text } from './styles';
 
 type GameProps = {
   game: IGame;
@@ -9,7 +8,7 @@ type GameProps = {
 function Game(props: GameProps) {
   const { game } = props;
   return (
-    <Fragment key={game.id}>
+    <Container key={game.id}>
       <Text>{game.name}</Text>
       <Text>
         {game.price.toLocaleString('pt-BR', {
@@ -18,9 +17,7 @@ function Game(props: GameProps) {
         })}
       </Text>
       <Text>{game.producer}</Text>
-      <Text>{game.platformId}</Text>
-      <Text>{game.genreId}</Text>
-    </Fragment>
+    </Container>
   );
 }
 

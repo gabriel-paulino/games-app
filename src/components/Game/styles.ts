@@ -1,17 +1,18 @@
-import React from 'react';
 import styled from 'styled-components';
 
-export const Container = styled(React.Fragment)`
-  border: 1px solid red;
+export const Container = styled.div`
+  border: 1px solid #777;
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  height: 5vh;
+  flex-direction: row;
+  width: 70%;
   justify-content: center;
   align-items: center;
-  background: blue;
+  background: '#C7c7c7';
+  margin: auto;
 `;
 export const Text = styled.p`
-  width: 10%;
+  width: 15%;
   font-size: 16px;
   color: '#c5c5FF';
 `;
