@@ -1,11 +1,12 @@
+import { Route, Routes } from 'react-router-dom';
+import GameDetail from './components/GameDetail';
 import Home from './pages/Home';
 
-function App() {
+export function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/games/*" element={<GameDetail />} />
+    </Routes>
   );
 }
-
-export default App;

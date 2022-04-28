@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { IGame } from '../../interfaces/Game';
 import { Container, Text } from './styles';
 
@@ -17,6 +18,7 @@ function Game(props: GameProps) {
         })}
       </Text>
       <Text>{game.producer}</Text>
+      <Link to={`games/${game.id}`}>{game.name}</Link>
     </Container>
   );
 }

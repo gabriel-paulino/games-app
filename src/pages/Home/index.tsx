@@ -1,11 +1,19 @@
+import { useQuery } from 'react-query';
 import GameList from '../../components/GameList';
 import Header from '../../components/Header';
-import { useFetch } from '../../hooks';
 import { IGame } from '../../interfaces/Game';
+import { Api } from '../../providers';
 
 function Home() {
-  const { data: games, isFetching } = useFetch<IGame[]>(
-    `games?page=1&quantity=10`,
+  const oneMinute: number = 1000 * 60;
+  const { data: games, isFetching } = useQuery<IGame[]>(
+    'games',
+    async () => {
+      const response = await Api.get('games?page=1&quantity=10');
+
+      return response.data;
+    },
+    { staleTime: oneMinute },
   );
 
   return (
